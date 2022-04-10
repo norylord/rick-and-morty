@@ -1,0 +1,28 @@
+@import "src/styles/Colors"
+
+.button
+  display: flex
+  justify-content: center
+  padding: 10px 4%
+  margin: 1% 3%
+  cursor: pointer
+  border-radius: 5px
+  &.outlined
+    font-size: 24px
+    border: 2px $primary solid
+    background: transparent
+    color: $primary
+    &:hover
+      background: #643fcc
+      border: 2px #643fcc solid
+      transition: background 0.3s
+      color: #fff
+
+  &.solid
+    font-size: 24px
+    border: 2px transparent solid
+    background: $primary
+    color: $textPrimary
+    &:hover
+      background: #643fcc
+      transition: background 0.3s
