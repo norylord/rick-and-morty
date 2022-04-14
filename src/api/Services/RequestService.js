@@ -1,8 +1,8 @@
 import FetchService from './FetchService';
 
 class RequestService {
-    allCharacters() {
-        const url = 'https://rickandmortyapi.com/api/character';
+    allCharacters(reqType) {
+        const url = `https://rickandmortyapi.com/api/${reqType}`;
         return FetchService.getData(url);
     }
 }

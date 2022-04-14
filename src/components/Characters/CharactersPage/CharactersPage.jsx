@@ -7,7 +7,7 @@ const CharactersPage = () => {
     const [data, setData] = useState({})
 
     useEffect(()=>{
-        RequestService.allCharacters().then(res => setData(res))
+        RequestService.allCharacters("character").then(res => setData(res))
     },[])
 
     return (
