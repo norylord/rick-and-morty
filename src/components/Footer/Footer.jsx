@@ -4,7 +4,7 @@ import "./Footer.sass"
 const Footer = () => {
     return (
         <div className="footer">
-            Norylord
+            @Norylord
         </div>
     );
 };
