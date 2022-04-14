@@ -1,7 +1,6 @@
 import React from 'react';
 import "./CharacterList.sass"
 import Character from "../Character/Character";
-import {logDOM} from "@testing-library/react";
 
 const CharacterList = ({data}) => {
 

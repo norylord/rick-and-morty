@@ -1,6 +1,6 @@
 import React from 'react';
 import "./Header.sass"
-import {AiFillGithub} from "react-icons/ai";
+import {AiFillGithub, AiOutlineSearch} from "react-icons/ai";
 import Input from "../input/Input";
 
 const Header = () => {
@@ -10,7 +10,9 @@ const Header = () => {
             <div className="header_logo">
                 <a href="https://github.com/nrylord"><AiFillGithub style={{"fontSize": 40}}/></a>
                 <Input placeholder="Search"
-                       variant="search"/>
+                       variant="search"
+                       icon={<AiOutlineSearch/>}
+                />
             </div>
 
             <div className="header_about">

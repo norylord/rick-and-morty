@@ -2,26 +2,22 @@ import React from 'react';
 import "./Input.sass"
 import {AiOutlineSearch} from "react-icons/ai";
 
-const Input = ({name, placeholder, variant}) => {
+const Input = ({name, placeholder, variant, icon}) => {
 
     if (variant === "search"){
         return (
             <div className="input__container">
-                <AiOutlineSearch/>
+                {icon}
                 <input placeholder={placeholder}>
 
                 </input>
             </div>
-
         )
     }
-
     return (
-        <div className="input__container">
             <input className="input">
 
             </input>
-        </div>
     );
 };
 

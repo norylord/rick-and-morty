@@ -1,7 +1,7 @@
 import React from 'react';
 import {Outlet} from 'react-router-dom'
-import Header from "../../ui/header/Header";
-import Footer from "../../ui/Footer/Footer";
+import Header from "../../ui/Header/Header";
+import Footer from "../../components/Footer/Footer";
 import "./AppLayout.sass"
 
 const AppLayout = () => {

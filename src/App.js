@@ -1,5 +1,6 @@
 import {Routes, Navigate, Route, BrowserRouter as Router} from 'react-router-dom'
 import "./styles/App.sass"
+import "./styles/Normalize.css"
 import Home from "./pages/Home/Home"
 import AppLayout from "./layout/AppLayout/AppLayout";
 
