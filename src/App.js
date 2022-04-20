@@ -11,7 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<AppLayout/>}>
             <Route index element={<Home/>}/>
-            <Route path="/episode" element={<EpisodePage/>}/>
+            <Route path="episode" element={<EpisodePage/>}/>
             <Route path="*" element={<Navigate to="/" replace/>}/>
           </Route>
         </Routes>
