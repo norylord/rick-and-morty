@@ -15,12 +15,14 @@ const CharacterInfo = () => {
 
     return (
         <div className="characterInfo">
-            <img src={character.image} alt=""/>
-            <div className="characterData">
-                <h1>{character.name}</h1>
-                <h2>{character.status}</h2>
-                <h2>{character.gender}</h2>
-                <h2>{character.species}</h2>
+            <div className="characterCard">
+                <img src={character.image} alt=""/>
+                <div className="characterData">
+                    <h1>{character.name}</h1>
+                    <h2>{character.status}</h2>
+                    <h2>{character.gender}</h2>
+                    <h2>{character.species}</h2>
+                </div>
             </div>
         </div>
     );
