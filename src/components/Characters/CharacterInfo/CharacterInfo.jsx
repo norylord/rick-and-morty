@@ -10,7 +10,6 @@ const CharacterInfo = () => {
 
     useEffect(()=>{
         RequestService.allCharacters(`/character/${id}`).then(res => setCharacter(res))
-        console.log(id)
     },[])
 
     return (
