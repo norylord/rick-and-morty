@@ -15,6 +15,7 @@ const CharacterList = ({data}) => {
                                location={char.location["name"]}
                                image={char.image}
                                key={char.id}
+                               id={char.id}
                     />
                 )) : <div className="loading">Loading Chars</div>
             }

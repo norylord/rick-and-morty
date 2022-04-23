@@ -1,8 +1,9 @@
 import React from 'react';
 import "./Character.sass"
 import Button from "../../../ui/Button/Button";
+import {Link} from "react-router-dom";
 
-const Character = ({name, status, gender, location, image}) => {
+const Character = ({id, name, status, gender, location, image}) => {
 
     return (
         <div className="character">
@@ -14,7 +15,7 @@ const Character = ({name, status, gender, location, image}) => {
                     <h2>Location: {location}</h2>
                 </div>
                 <div>
-                    <Button children="Details" type="outlined"/>
+                    <Link to={`character/${id}`} style={{ textDecoration: 'none' }}><Button children="Details" type="outlined"/></Link>
                 </div>
 
             </div>
