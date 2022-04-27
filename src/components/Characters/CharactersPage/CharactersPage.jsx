@@ -3,6 +3,7 @@ import RequestService from "../../../api/Services/RequestService";
 import CharacterList from "../CharactersList/CharacterList";
 import Input from "../../../ui/input/Input";
 import './CharactersPage.sass'
+import Checkbox from "../../../ui/Checkbox/Checkbox";
 
 const CharactersPage = () => {
 
@@ -23,6 +24,9 @@ const CharactersPage = () => {
         <div className='characterPage'>
             <div className="searchContainer">
                 <Input placeholder="Enter Name" onChange={e => setParams({...params, name: e.target.value})}/>
+                <div className="checkboxContainer">
+                    <Checkbox name={'Alive'} id={"Alive"} value={'Alive'} label={'Alive'}/>
+                </div>
             </div>
             <CharacterList data={data}/>
         </div>
