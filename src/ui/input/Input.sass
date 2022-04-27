@@ -4,7 +4,6 @@
 .input__container
   display: flex
   justify-content: space-between
-  align-items: center
   padding: 10px 10px
   background: $lightPrimary
   border: none
@@ -12,10 +11,8 @@
   font-size: 30px
   input
     font-family: "Roboto", sans-serif
-    font-size: 30px
     display: flex
     justify-content: center
-    align-items: center
     background: transparent
     border: none
     padding: 0 10px
@@ -26,3 +23,14 @@
     padding-right: 10px
     margin-right: 10px
     border-right: 1px #fff solid
+
+.Input
+  display: flex
+  font-size: 30px
+  padding: 10px 20px
+  outline: 0
+  border-width: 0 0 2px
+  border-color: $primary
+  width: 100%
+  &:focus
+    outline: none

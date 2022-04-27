@@ -4,21 +4,17 @@ import {AiOutlineSearch} from "react-icons/ai";
 
 const Input = ({name, placeholder, variant, icon, onChange, value}) => {
 
-    if (variant === "search"){
-        return (
-            <div className="input__container">
+    switch (variant){
+        case "search":
+            return <div className="input__container">
                 {icon}
                 <input placeholder={placeholder} onChange={onChange} value={value}>
-
                 </input>
             </div>
-        )
-    }
-    return (
-            <input className="input">
+        default:
+            return <input className='Input' placeholder={placeholder} onChange={onChange} value={value}/>
 
-            </input>
-    );
+    }
 };
 
 export default Input;
