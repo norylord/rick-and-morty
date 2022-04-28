@@ -4,12 +4,14 @@ import CharacterList from "../CharactersList/CharacterList";
 import Input from "../../../ui/input/Input";
 import './CharactersPage.sass'
 import Checkbox from "../../../ui/Checkbox/Checkbox";
+import Button from "../../../ui/Button/Button";
 
 const CharactersPage = () => {
 
     const cfg = {
         name: null,
-        status: null
+        status: null,
+        page: 1
     }
 
     const [data, setData] = useState({})
@@ -25,6 +27,20 @@ const CharactersPage = () => {
             case 'alive':
                 setParams({...params, status: params.status === 'Alive' ? null : 'Alive'})
                 break
+            default:
+                break
+        }
+    }
+    const switchPage = (type) => {
+        switch (type) {
+            case 'next':
+                setParams({...params, page: params.page++})
+                break
+            case 'previous':
+                setParams({...params, page: params.page--})
+                break
+            default:
+                break
         }
     }
 
@@ -36,10 +52,11 @@ const CharactersPage = () => {
                     <Checkbox name={'Alive'} id={"Alive"} value={'Alive'} label={'Alive'} onChange={() => changeParams('alive')}/>
                 </div>
             </div>
-                    <Checkbox name={'Alive'} id={"Alive"} value={'Alive'} label={'Alive'}/>
-                </div>
-            </div>
             <CharacterList data={data}/>
+            <div className="pageSwitchers">
+                <Button children='Previous' onClick={() => switchPage('previous')}/>
+                <Button children='Next' onClick={() => switchPage('next')}/>
+            </div>
         </div>
     );
 };
