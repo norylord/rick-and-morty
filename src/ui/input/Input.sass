@@ -4,7 +4,6 @@
 .input__container
   display: flex
   justify-content: space-between
-  align-items: center
   padding: 10px 10px
   background: $lightPrimary
   border: none
@@ -12,21 +11,18 @@
   font-size: 30px
   input
     font-family: "Roboto", sans-serif
-    font-size: 30px
     display: flex
     justify-content: center
-    align-items: center
     background: transparent
     border: none
     padding: 0 10px
+    color: #fff
     &:focus
       outline: none
   svg
     padding-right: 10px
     margin-right: 10px
-<<<<<<< Updated upstream
     border-right: 1px #fff solid
-=======
     border-right: 1px #fff solid
 
 .Input
@@ -40,4 +36,7 @@
   &:focus
     outline: none
     border-color: $primary
->>>>>>> Stashed changes
+  border-color: $primary
+  width: 100%
+  &:focus
+    outline: none

@@ -9,8 +9,7 @@ const CharacterInfo = () => {
     const [character, setCharacter] = useState({})
 
     useEffect(()=>{
-        RequestService.allCharacters(`/character/${id}`).then(res => setCharacter(res))
-        console.log(id)
+        RequestService.singleCharacter(id).then(res => setCharacter(res))
     },[])
 
     return (
