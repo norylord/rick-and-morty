@@ -1,6 +1,5 @@
 import React from 'react';
 import "./Input.sass"
-import {AiOutlineSearch} from "react-icons/ai";
 
 const Input = ({name, placeholder, variant, icon, onChange, value}) => {
 
