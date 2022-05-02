@@ -19,8 +19,9 @@ const CharactersPage = () => {
 
 
     useEffect(()=>{
-        RequestService.allCharacters(params).then(res => setData(res))
-    },[params])
+        console.log(params)
+        RequestService.allCharacters(params).then(res => setData(res)).then(console.log(data))
+    },[params, setParams])
 
     const changeParams = (type) => {
         switch (type){
@@ -34,10 +35,10 @@ const CharactersPage = () => {
     const switchPage = (type) => {
         switch (type) {
             case 'next':
-                setParams({...params, page: params.page++})
+                setParams({...params, page: params.page + 1})
                 break
             case 'previous':
-                setParams({...params, page: params.page--})
+                setParams({...params, page: params.page - 1})
                 break
             default:
                 break
