@@ -22,10 +22,16 @@ const EpisodePage = () => {
     const switchPage = (type) => {
         switch (type) {
             case 'next':
-                setParams({...params, page: params.page + 1})
+                setParams({...params, page: params.page < episodeData.info.pages ? params.page + 1 : params.page})
                 break
             case 'previous':
-                setParams({...params, page: params.page - 1})
+                setParams({...params, page: params.page > 1 ? params.page - 1 : params.page})
+                break
+            case 'end':
+                setParams({...params, page: episodeData.info.pages})
+                break
+            case 'begin':
+                setParams({...params, page: 1})
                 break
             default:
                 break
@@ -39,8 +45,11 @@ const EpisodePage = () => {
             </div>
             <EpisodeList data={episodeData}/>
             <div className="pageSwitchers">
+                <Button children='Begin' type='outlined' onClick={() => switchPage('begin')}/>
                 <Button children='Previous' onClick={() => switchPage('previous')}/>
+                <h1>{params.page}</h1>
                 <Button children='Next' onClick={() => switchPage('next')}/>
+                <Button children='End' type='outlined' onClick={() => switchPage('end')}/>
             </div>
         </div>
     );

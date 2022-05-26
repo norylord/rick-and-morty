@@ -14,7 +14,7 @@ const EpisodeList = ({data}) => {
                                    created={episode.created}
                                    key={episode.id}
                         />
-                    )) : <div className="loading">Loading Chars</div>
+                    )) : <div className="loading">Loading Episodes</div>
             }
         </div>
     );
