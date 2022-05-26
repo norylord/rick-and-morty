@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/rick-and-morty/static/css/main.129a97e2.css",
+    "main.js": "/rick-and-morty/static/js/main.0d4e1754.js",
+    "index.html": "/rick-and-morty/index.html",
+    "main.129a97e2.css.map": "/rick-and-morty/static/css/main.129a97e2.css.map",
+    "main.0d4e1754.js.map": "/rick-and-morty/static/js/main.0d4e1754.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.129a97e2.css",
+    "static/js/main.0d4e1754.js"
+  ]
+}
