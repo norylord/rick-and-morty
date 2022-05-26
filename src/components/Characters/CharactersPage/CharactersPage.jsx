@@ -18,13 +18,13 @@ const CharactersPage = () => {
     const [params, setParams] = useState(cfg)
 
 
-    useEffect(()=>{
+    useEffect(() => {
         console.log(params)
-        RequestService.allCharacters(params).then(res => setData(res)).then(console.log(data))
-    },[params, setParams])
+        RequestService.allCharacters(params).then(res => setData(res))
+    }, [params, setParams])
 
     const changeParams = (type) => {
-        switch (type){
+        switch (type) {
             case 'alive':
                 setParams({...params, status: params.status === 'Alive' ? null : 'Alive'})
                 break
@@ -51,18 +51,30 @@ const CharactersPage = () => {
         }
     }
 
+
     return (
         <div className='characterPage'>
             <div className="searchContainer">
                 <Input placeholder="Enter Name" onChange={e => setParams({...params, name: e.target.value})}/>
                 <div className="checkboxContainer">
-                    <Checkbox name={'Alive'} id={"Alive"} value={'Alive'} label={'Alive'} onChange={() => changeParams('alive')}/>
+                    <Checkbox name={'Alive'} id={"Alive"} value={'Alive'} label={'Alive'}
+                              onChange={() => changeParams('alive')}/>
                 </div>
             </div>
+            {
+                data.info ?
+                    <div className="dataInfo">
+                        <h3 style={{textAlign: 'center'}}>Total data: {data.info.count}</h3>
+                        <h3 style={{textAlign: 'center'}}>Total pages: {data.info.pages}</h3>
+                    </div>
+                    :
+                    <div></div>
+            }
+
             <CharacterList data={data}/>
             <div className="pageSwitchers">
                 <Button children='Begin' type='outlined' onClick={() => switchPage('begin')}/>
-                <Button children='Previous'  onClick={() => switchPage('previous')}/>
+                <Button children='Previous' onClick={() => switchPage('previous')}/>
                 <h1>{params.page}</h1>
                 <Button children='Next' onClick={() => switchPage('next')}/>
                 <Button children='End' type='outlined' onClick={() => switchPage('end')}/>

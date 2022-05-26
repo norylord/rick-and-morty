@@ -3,9 +3,9 @@ import CharactersPage from "../../components/Characters/CharactersPage/Character
 
 const Home = () => {
     return (
-        <div>
-            <CharactersPage/>
-        </div>
+
+        <CharactersPage/>
+
     );
 };
 
