@@ -56,11 +56,11 @@ const CharactersPage = () => {
         <div className='characterPage'>
             <div className="searchContainer">
                 <Input placeholder="Enter Name" onChange={e => setParams({...params, name: e.target.value})}/>
+            </div>
                 <div className="checkboxContainer">
                     <Checkbox name={'Alive'} id={"Alive"} value={'Alive'} label={'Alive'}
                               onChange={() => changeParams('alive')}/>
                 </div>
-            </div>
             {
                 data.info ?
                     <div className="dataInfo">
