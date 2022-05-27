@@ -9,10 +9,6 @@ const Header = () => {
 
             <div className="header_logo">
                 <a href="https://github.com/nrylord"><AiFillGithub style={{"fontSize": 40}}/></a>
-                <Input placeholder="Search"
-                       variant="search"
-                       icon={<AiOutlineSearch/>}
-                />
             </div>
 
             <div className="header_about">
