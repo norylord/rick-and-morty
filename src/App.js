@@ -1,4 +1,4 @@
-import {Routes, Navigate, Route, BrowserRouter as Router} from 'react-router-dom'
+import {Routes, Navigate, Route, BrowserRouter, HashRouter as Router} from 'react-router-dom'
 import "./styles/App.sass"
 import './styles/Normalize.css'
 import Home from "./pages/Home/Home"
