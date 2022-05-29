@@ -6,14 +6,8 @@ import Input from "../../ui/input/Input";
 const Header = () => {
     return (
         <div className="header">
-
-            <div className="header_logo">
-                <a href="https://github.com/nrylord"><AiFillGithub style={{"fontSize": 40}}/></a>
-            </div>
-
-            <div className="header_about">
-                <a href="">About</a>
-            </div>
+            <a href="https://github.com/nrylord"><AiFillGithub style={{"fontSize": 40}}/></a>
+            <a href="">About</a>
         </div>
     );
 };

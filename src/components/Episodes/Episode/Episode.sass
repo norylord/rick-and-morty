@@ -1,13 +1,8 @@
 @import "src/styles/Colors"
 
 .episode
-  display: flex
   flex-basis: 40%
-  flex-flow: row wrap
-  background: #ffffff
-  justify-content: flex-start
   margin: 20px 20px
-  padding: 20px 20px
   border-radius: 5px
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.26)
   button
@@ -15,18 +10,11 @@
 
 .episode__info
   color: $textSecondary
-  display: flex
-  justify-content: space-around
-  flex-flow: column wrap
-  margin: 5% 10%
+  margin: 20px 40px
 
 @media (max-width: 1660px)
   .episode
-    display: flex
     flex-basis: content
-    justify-content: center
-    flex-flow: row wrap
-    background: #ffffff
     margin: 20px 20px
     border-radius: 5px
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.26)

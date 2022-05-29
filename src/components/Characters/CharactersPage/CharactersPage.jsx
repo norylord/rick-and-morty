@@ -19,7 +19,6 @@ const CharactersPage = () => {
 
 
     useEffect(() => {
-        console.log(params)
         RequestService.allCharacters(params).then(res => setData(res))
     }, [params, setParams])
 
@@ -54,13 +53,6 @@ const CharactersPage = () => {
 
     return (
         <div className='characterPage'>
-            <div className="searchContainer">
-                <Input placeholder="Enter Name" onChange={e => setParams({...params, name: e.target.value})}/>
-            </div>
-                <div className="checkboxContainer">
-                    <Checkbox name={'Alive'} id={"Alive"} value={'Alive'} label={'Alive'}
-                              onChange={() => changeParams('alive')}/>
-                </div>
             {
                 data.info ?
                     <div className="dataInfo">
@@ -70,6 +62,14 @@ const CharactersPage = () => {
                     :
                     <div></div>
             }
+            <div className="searchContainer">
+                <Input placeholder="Enter Name" onChange={e => setParams({...params, name: e.target.value})}/>
+            </div>
+                <div className="checkboxContainer">
+                    <Checkbox name={'Alive'} id={"Alive"} value={'Alive'} label={'Alive'}
+                              onChange={() => changeParams('alive')}/>
+                </div>
+
 
             <CharacterList data={data}/>
             <div className="pageSwitchers">
