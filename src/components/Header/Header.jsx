@@ -1,7 +1,6 @@
 import React from 'react';
 import "./Header.sass"
-import {AiFillGithub, AiOutlineSearch} from "react-icons/ai";
-import Input from "../../ui/input/Input";
+import {AiFillGithub} from "react-icons/ai";
 
 const Header = () => {
     return (
