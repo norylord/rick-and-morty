@@ -2,32 +2,47 @@
 
 .character
   display: flex
-  flex-basis: 45%
+  flex-basis: min-content
   flex-flow: row wrap
   margin: 20px 20px
-
   border-radius: 10px
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.26)
-
+  button
+    margin: 10px 0
   img
-    border-radius: 10px 0 0 10px
+    border-radius: 10px 10px 0 0
 
 .character__info
   color: $textSecondary
   display: flex
   justify-content: space-around
   flex-flow: column wrap
-  padding: 2% 5%
+  padding: 10px 20px
+  word-wrap: break-word
 
-@media (max-width: 1660px)
+@media (min-width: 576px)
   .character
-    flex-basis: min-content
-    margin: 20px 20px
-    border-radius: 10px
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.26)
-    button
-      margin: 10px 0
+    flex-basis: 300px
+    flex-flow: row wrap
     img
       border-radius: 10px 10px 0 0
-      width: 300px
-      height: 300px
+
+
+@media (min-width: 992px)
+  .character
+    flex-basis: 70%
+    flex-flow: row nowrap
+    img
+      border-radius: 10px 0 0 10px
+
+@media (min-width: 1200px)
+  .character
+    flex-basis: 45%
+    img
+      border-radius: 10px 0 0 10px
+
+@media (min-width: 1400px)
+  .character
+    flex-basis: 45%
+    img
+      border-radius: 10px 0 0 10px

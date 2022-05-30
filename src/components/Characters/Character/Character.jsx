@@ -17,7 +17,6 @@ const Character = ({id, name, status, gender, location, image}) => {
                 <div>
                     <Link to={`character/${id}`} style={{ textDecoration: 'none' }}><Button children="Details" type="outlined"/></Link>
                 </div>
-
             </div>
 
         </div>
