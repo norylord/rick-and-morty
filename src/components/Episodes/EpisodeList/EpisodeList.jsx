@@ -1,5 +1,4 @@
 import React from 'react';
-import Character from "../../Characters/Character/Character";
 import Episode from "../Episode/Episode";
 import './EpisodeList.sass'
 
