@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import RequestService from "../../api/Services/RequestService";
 import CharacterList from "../../components/Characters/CharactersList/CharacterList";
-import Input from "../../ui/input/Input";
+import Input from "../../ui/Input/Input";
 import './CharactersPage.sass'
 import Checkbox from "../../ui/Checkbox/Checkbox";
 import PageSwitchers from "../../components/PageSwitchers/PageSwitchers";

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import RequestService from "../../api/Services/RequestService";
 import EpisodeList from "../../components/Episodes/EpisodeList/EpisodeList";
-import Input from "../../ui/input/Input";
+import Input from "../../ui/Input/Input";
 import PageSwitchers from "../../components/PageSwitchers/PageSwitchers";
 
 const EpisodePage = () => {
