@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import RequestService from "../../api/Services/RequestService";
 import EpisodeList from "../../components/Episodes/EpisodeList/EpisodeList";
 import Input from "../../ui/input/Input";
-import Button from "../../ui/Button/Button";
+import PageSwitchers from "../../components/PageSwitchers/PageSwitchers";
 
 const EpisodePage = () => {
 
@@ -53,13 +53,7 @@ const EpisodePage = () => {
             </div>
 
             <EpisodeList data={episodeData}/>
-            <div className="pageSwitchers">
-                <Button children='Begin' type='outlined' onClick={() => switchPage('begin')}/>
-                <Button children='Previous' onClick={() => switchPage('previous')}/>
-                <h1>{params.page}</h1>
-                <Button children='Next' onClick={() => switchPage('next')}/>
-                <Button children='End' type='outlined' onClick={() => switchPage('end')}/>
-            </div>
+            <PageSwitchers page={params.page} switchPage={switchPage}/>
         </div>
     );
 };

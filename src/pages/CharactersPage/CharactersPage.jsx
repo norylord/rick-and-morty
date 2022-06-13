@@ -4,7 +4,7 @@ import CharacterList from "../../components/Characters/CharactersList/CharacterL
 import Input from "../../ui/input/Input";
 import './CharactersPage.sass'
 import Checkbox from "../../ui/Checkbox/Checkbox";
-import Button from "../../ui/Button/Button";
+import PageSwitchers from "../../components/PageSwitchers/PageSwitchers";
 
 const CharactersPage = () => {
 
@@ -72,13 +72,7 @@ const CharactersPage = () => {
 
 
             <CharacterList data={data}/>
-            <div className="pageSwitchers">
-                <Button children='<<' type='outlined' onClick={() => switchPage('begin')}/>
-                <Button children='<' onClick={() => switchPage('previous')}/>
-                <h1>{params.page}</h1>
-                <Button children='>' onClick={() => switchPage('next')}/>
-                <Button children='>>' type='outlined' onClick={() => switchPage('end')}/>
-            </div>
+            <PageSwitchers page={params.page} switchPage={switchPage}/>
         </div>
     );
 };
