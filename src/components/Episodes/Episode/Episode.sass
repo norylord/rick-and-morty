@@ -1,22 +1,32 @@
 @import "src/styles/Colors"
 
 .episode
-  flex-basis: 40%
+  flex: 1 0 90%
+  flex-flow: row wrap
   margin: 20px 20px
-  border-radius: 5px
+  border-radius: 10px
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.26)
   button
     margin: 10px 0
 
 .episode__info
   color: $textSecondary
-  margin: 20px 40px
+  display: flex
+  justify-content: space-around
+  flex-flow: column wrap
+  padding: 10px 20px
+  word-wrap: break-word
 
-@media (max-width: 1660px)
+
+@media (min-width: 576px)
   .episode
-    flex-basis: content
-    margin: 20px 20px
-    border-radius: 5px
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.26)
-    button
-      margin: 10px 0
+    flex: 1 0 90%
+    flex-flow: row nowrap
+
+@media (min-width: 768px)
+  .episode
+    flex: 1 0 90%
+
+@media (min-width: 1200px)
+  .episode
+    flex: 1 0 45%

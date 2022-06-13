@@ -1,7 +1,7 @@
 import {Routes, Navigate, Route, BrowserRouter, HashRouter as Router} from 'react-router-dom'
 import "./styles/App.sass"
 import './styles/Normalize.css'
-import Home from "./pages/Home/Home"
+import Home from "./pages/HomePage/HomePage"
 import AppLayout from "./layout/AppLayout/AppLayout";
 import EpisodePage from "./pages/EpisodesPage/EpisodePage";
 import CharacterInfo from "./components/Characters/CharacterInfo/CharacterInfo";

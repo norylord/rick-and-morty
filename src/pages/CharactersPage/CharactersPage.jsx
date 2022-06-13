@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import RequestService from "../../../api/Services/RequestService";
-import CharacterList from "../CharactersList/CharacterList";
-import Input from "../../../ui/input/Input";
+import RequestService from "../../api/Services/RequestService";
+import CharacterList from "../../components/Characters/CharactersList/CharacterList";
+import Input from "../../ui/input/Input";
 import './CharactersPage.sass'
-import Checkbox from "../../../ui/Checkbox/Checkbox";
-import Button from "../../../ui/Button/Button";
+import Checkbox from "../../ui/Checkbox/Checkbox";
+import Button from "../../ui/Button/Button";
 
 const CharactersPage = () => {
 
@@ -73,11 +73,11 @@ const CharactersPage = () => {
 
             <CharacterList data={data}/>
             <div className="pageSwitchers">
-                <Button children='Begin' type='outlined' onClick={() => switchPage('begin')}/>
-                <Button children='Previous' onClick={() => switchPage('previous')}/>
+                <Button children='<<' type='outlined' onClick={() => switchPage('begin')}/>
+                <Button children='<' onClick={() => switchPage('previous')}/>
                 <h1>{params.page}</h1>
-                <Button children='Next' onClick={() => switchPage('next')}/>
-                <Button children='End' type='outlined' onClick={() => switchPage('end')}/>
+                <Button children='>' onClick={() => switchPage('next')}/>
+                <Button children='>>' type='outlined' onClick={() => switchPage('end')}/>
             </div>
         </div>
     );

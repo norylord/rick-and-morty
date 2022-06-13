@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import RequestService from "../../api/Services/RequestService";
 import EpisodeList from "../../components/Episodes/EpisodeList/EpisodeList";
 import Input from "../../ui/input/Input";
-import './EpisodePage.sass'
 import Button from "../../ui/Button/Button";
 
 const EpisodePage = () => {
