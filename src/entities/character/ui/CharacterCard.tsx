@@ -1,6 +1,7 @@
 import React from 'react';
 import {Character} from "@/entities/character";
 import Image from "next/image";
+import Link from "next/link";
 
 type TProps = {
 	character: Character
@@ -18,7 +19,8 @@ export const CharacterCardSkeleton = () => {
 
 const CharacterCard = (props: TProps) => {
 	return (
-		<div className={[cardClass, "h-full w-full border border-gray-500/20 bg-mist-800 grid grid-cols-2"].join(' ')}>
+		<Link href={`/characters/${props.character.id}`}
+		      className={[cardClass, "h-full w-full border border-gray-500/20 bg-mist-800 grid grid-cols-2"].join(' ')}>
 			<div className={' p-4'}>
 				<p className={"text-xl"}>
 					{props.character.name}
@@ -28,7 +30,7 @@ const CharacterCard = (props: TProps) => {
 				<Image src={props.character.image} alt={props.character.name} width={300} height={300}
 				       className={'size-full object-cover'}/>
 			</div>
-		</div>
+		</Link>
 	);
 };
 

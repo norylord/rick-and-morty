@@ -1,4 +1,5 @@
-import {api, PaginatedResponse} from "@/shared/";
+import {api, ApiError} from "@/shared/api";
+import type {PaginatedResponse} from '@/shared/model'
 import {Character} from "../model/type";
 
 type FilterCharactersParams = Partial<{
@@ -17,4 +18,10 @@ export type GetCharactersParams = FilterCharactersParams & PaginationCharactersP
 
 export const getCharacters = async (params: GetCharactersParams): Promise<PaginatedResponse<Character[]>> => {
 	return api.get<PaginatedResponse<Character[]>>('/character', {params})
+}
+
+export const getCharacter = async (id: number): Promise<Character> => {
+
+	return await api.get<Character>(`/character/${id}`)
+
 }
