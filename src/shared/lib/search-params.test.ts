@@ -1,5 +1,5 @@
 import {describe, expect, it} from "vitest";
-import {parsePage} from "@/shared";
+import {parsePage} from "@/shared/lib";
 
 describe('search-params', () => {
 	const variants = [

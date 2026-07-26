@@ -1,7 +1,7 @@
 import {describe, expect, it} from 'vitest'
 import {http, HttpResponse} from 'msw'
 import {server} from '@test/mocks/server'
-import {ApiError} from '@/shared'
+import {ApiError} from '@/shared/api'
 import {getCharacters} from './api'
 
 const URL = 'https://rickandmortyapi.com/api/character'

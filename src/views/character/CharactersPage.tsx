@@ -5,8 +5,9 @@ import {useQuery} from "@tanstack/react-query";
 import {characterQueries, CharactersListSkeleton} from "@/entities/character";
 import {CharactersList} from "@/entities/character";
 import {useRouter, useSearchParams} from "next/navigation";
-import {ErrorState, PaginationControlled, usePageParam} from "@/shared";
-import {ApiError} from "@/shared";
+import {ErrorState, PaginationControlled} from "@/shared/ui";
+import {usePageParam} from "@/shared/lib"
+import {ApiError} from "@/shared/api";
 
 
 export const CharactersPage = () => {

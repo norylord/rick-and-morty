@@ -1,7 +1,7 @@
-import {useSearchParams} from "next/navigation";
+'use client'
 
-export const parsePage = (value: string | null) => {
-	return Math.max(1, Math.floor(Number(value))) || 1
-}
+import {useSearchParams} from "next/navigation";
+import {parsePage} from "./parse-page";
+
 
 export const usePageParam = () => parsePage(useSearchParams().get('page'))
