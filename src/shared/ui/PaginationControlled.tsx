@@ -1,7 +1,6 @@
 "use client";
 
 import {Pagination} from "@heroui/react";
-import {useState} from "react";
 
 type TProps = {
 	page: number,
