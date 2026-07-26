@@ -5,14 +5,14 @@ import {useQuery} from "@tanstack/react-query";
 import {characterQueries, CharactersListSkeleton} from "@/entities/character";
 import {CharactersList} from "@/entities/character";
 import {useRouter, useSearchParams} from "next/navigation";
-import {ErrorState, PaginationControlled} from "@/shared";
+import {ErrorState, PaginationControlled, usePageParam} from "@/shared";
 import {ApiError} from "@/shared";
 
 
 export const CharactersPage = () => {
 
 	const searchParams = useSearchParams()
-	const page = Math.max(1, Math.floor(Number(searchParams.get('page')))) || 1
+	const page = usePageParam()
 	const router = useRouter()
 
 
