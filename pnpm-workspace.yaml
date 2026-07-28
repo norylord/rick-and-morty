@@ -1,3 +1,8 @@
-ignoredBuiltDependencies:
-  - sharp
-  - unrs-resolver
+allowBuilds:
+  # Нужен Next.js для оптимизации изображений (next/image)
+  sharp: true
+  # Нативный резолвер импортов для ESLint
+  unrs-resolver: true
+  # Ставит service worker в public/ для мокирования в браузере.
+  # msw используется только в Node (Vitest), так что скрипт не нужен.
+  msw: false
