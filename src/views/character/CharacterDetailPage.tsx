@@ -3,8 +3,8 @@ import {Character, getCharacter} from "@/entities/character";
 import {ApiError} from "@/shared/api";
 import {notFound} from "next/navigation";
 import Image from "next/image";
-import Link from "next/link";
 import {Card, Chip, Typography} from "@heroui/react";
+import {Breadcrumbs} from "@/shared/ui";
 
 type TProps = {
 	id: number
@@ -60,9 +60,11 @@ export const CharacterDetailPage = async (props: TProps) => {
 
 	return (
 		<div className={'px-6 md:px-15 py-10 flex flex-col gap-10'}>
-			<Link href={'/characters'} className={'w-fit uppercase font-semibold opacity-70 hover:opacity-100 transition-opacity'}>
-				← К персонажам
-			</Link>
+			<Breadcrumbs items={[
+				{label: 'Главная', href: '/'},
+				{label: 'Персонажи', href: '/characters'},
+				{label: character.name}
+			]}/>
 
 			<div className={'grid gap-8 lg:grid-cols-[minmax(280px,380px)_1fr] items-start'}>
 				<div className={'relative aspect-square w-full overflow-hidden rounded-2xl shadow-xl'}>
@@ -92,7 +94,8 @@ export const CharacterDetailPage = async (props: TProps) => {
 						<Chip variant={'soft'}>{character.species}</Chip>
 						<Chip variant={'soft'}>{genderLabel[character.gender]}</Chip>
 						{character.type && <Chip variant={'soft'}>{character.type}</Chip>}
-						<Chip variant={'soft'} color={character.status === 'Alive' ? 'success' : character.status === 'Dead' ? 'danger' : 'default'}>
+						<Chip variant={'soft'}
+						      color={character.status === 'Alive' ? 'success' : character.status === 'Dead' ? 'danger' : 'default'}>
 							{statusLabel[character.status]}
 						</Chip>
 					</div>

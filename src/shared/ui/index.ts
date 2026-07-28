@@ -1,3 +1,4 @@
+export * from './Breadcrumbs'
 export * from './PaginationControlled'
 export * from './ErrorState'
 export * from './NotFoundScreen'

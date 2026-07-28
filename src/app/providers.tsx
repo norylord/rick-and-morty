@@ -4,6 +4,8 @@ import React from 'react';
 import {environmentManager, QueryClient, QueryClientProvider} from "@tanstack/react-query";
 import {ReactQueryDevtools} from "@tanstack/react-query-devtools";
 import {ThemeProvider} from "next-themes";
+import {RouterProvider} from "@heroui/react";
+import {useRouter} from "next/navigation";
 
 
 declare global {
@@ -38,6 +40,7 @@ type TProps = {
 
 const Providers = ({children}: TProps) => {
 	const queryClient = getQueryClient()
+	const router = useRouter()
 
 	// Только для браузерного расширения TanStack Query.
 	// useEffect не выполняется на сервере, поэтому window здесь всегда есть.
@@ -49,7 +52,10 @@ const Providers = ({children}: TProps) => {
 		<QueryClientProvider client={queryClient}>
 			<ReactQueryDevtools initialIsOpen={false}/>
 			<ThemeProvider attribute="class" defaultTheme="light">
-				{children}
+				{/* Ссылки heroui (Breadcrumbs, Link) ходят через роутер Next, а не полной перезагрузкой */}
+				<RouterProvider navigate={router.push}>
+					{children}
+				</RouterProvider>
 			</ThemeProvider>
 		</QueryClientProvider>
 	);
