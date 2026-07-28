@@ -33,7 +33,7 @@ export const CharactersPage = () => {
 		<>
 			<CharactersList characters={data.results}/>
 			<div
-				className={'fixed h-20 flex justify-center items-center gap-4 w-full bottom-0 bg-background z-50'}>
+				className={' h-20 flex justify-center items-center gap-4 w-full z-50'}>
 				<PaginationControlled totalPages={data.info.pages} page={page} onChange={(v) => goToPage(v)}/>
 			</div>
 		</>

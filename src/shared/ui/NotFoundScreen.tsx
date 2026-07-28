@@ -1,9 +1,8 @@
 import React from 'react';
 import {Typography} from "@heroui/react";
 
-type TProps = {}
 
-export const NotFoundScreen = (props: TProps) => {
+export const NotFoundScreen = () => {
 	return (
 		<div className={'h-full w-full flex justify-center items-center flex-col gap-4'}>
 
