@@ -3,6 +3,7 @@ import {Geist, Geist_Mono} from "next/font/google";
 import "./globals.css";
 import Providers from "@/app/providers";
 import AppHeader from "@/widgets/AppHeader";
+import AppGradient from "@/widgets/AppGradient";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -31,6 +32,7 @@ export default function RootLayout({
 			suppressHydrationWarning
 		>
 		<body className={'bg-background text-foreground'}>
+		<AppGradient/>
 		<Providers>
 			<main className="grid grid-rows-[min-content_1fr] min-h-screen max-w-dvw overflow-x-hidden">
 				<AppHeader/>
