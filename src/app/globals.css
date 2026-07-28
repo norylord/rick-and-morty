@@ -1,5 +1,10 @@
 @import "tailwindcss";
 @import "@heroui/styles";
+@import "../shared/styles/index.css";
+
+/* Тема переключается вручную классом на <html> (его ставит next-themes
+   с attribute="class"), а не системной настройкой. */
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
     --background: #ffffff;
@@ -13,11 +18,9 @@
     --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
-    }
+.dark {
+    --background: #131315;
+    --foreground: #ededed;
 }
 
 body {

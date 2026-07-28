@@ -3,6 +3,7 @@
 import React from 'react';
 import {environmentManager, QueryClient, QueryClientProvider} from "@tanstack/react-query";
 import {ReactQueryDevtools} from "@tanstack/react-query-devtools";
+import {ThemeProvider} from "next-themes";
 
 
 declare global {
@@ -47,7 +48,9 @@ const Providers = ({children}: TProps) => {
 	return (
 		<QueryClientProvider client={queryClient}>
 			<ReactQueryDevtools initialIsOpen={false}/>
-			{children}
+			<ThemeProvider attribute="class" defaultTheme="light">
+				{children}
+			</ThemeProvider>
 		</QueryClientProvider>
 	);
 };

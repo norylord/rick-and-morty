@@ -27,11 +27,12 @@ export default function RootLayout({
 	return (
 		<html
 			lang="en"
-			className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
+			className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+			suppressHydrationWarning
 		>
 		<body className={'bg-background text-foreground'}>
 		<Providers>
-			<main className="grid grid-rows-[min-content_1fr] min-h-screen">
+			<main className="grid grid-rows-[min-content_1fr] min-h-screen max-w-dvw overflow-x-hidden">
 				<AppHeader/>
 				{children}
 			</main>
