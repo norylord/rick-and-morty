@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import {Character, getCharacter} from "@/entities/character";
 import {ApiError} from "@/shared/api";
 import {notFound} from "next/navigation";
 import Image from "next/image";
-import {Card, Chip, Typography} from "@heroui/react";
+import {Chip, Typography} from "@heroui/react";
 import {Breadcrumbs} from "@/shared/ui";
+import {EpisodeListSkeleton, parseEpisodeIds} from "@/entities/episode";
+import {CharacterEpisodes} from "@/views/character";
 
 type TProps = {
 	id: number
@@ -28,9 +30,6 @@ const statusLabel: Record<Character['status'], string> = {
 	Dead: 'Мёртв',
 	unknown: 'Неизвестно'
 }
-
-const episodeNumber = (url: string) => url.split('/').pop()
-
 const InfoRow = (props: { label: string, value: string }) => {
 	return (
 		<div className={'flex flex-col gap-1 border-b border-foreground/10 py-3'}>
@@ -57,6 +56,8 @@ export const CharacterDetailPage = async (props: TProps) => {
 		month: 'long',
 		year: 'numeric'
 	}).format(new Date(character.created))
+
+	const episodesIds = parseEpisodeIds(character.episode)
 
 	return (
 		<div className={'px-6 md:px-15 py-10 flex flex-col gap-10'}>
@@ -111,25 +112,29 @@ export const CharacterDetailPage = async (props: TProps) => {
 				</div>
 			</div>
 
-			<Card variant={'transparent'} className={'bg-background/40 rounded-2xl'}>
-				<Card.Header>
-					<Card.Title className={'text-xl font-semibold'}>
-						Эпизоды
-					</Card.Title>
-					<Card.Description>
-						Появлений: {character.episode.length}
-					</Card.Description>
-				</Card.Header>
-				<Card.Content>
-					<div className={'flex flex-wrap gap-2'}>
-						{character.episode.map((url) => (
-							<Chip key={url} variant={'secondary'} size={'sm'}>
-								Эпизод {episodeNumber(url)}
-							</Chip>
-						))}
-					</div>
-				</Card.Content>
-			</Card>
+			{/*<Card variant={'transparent'} className={'bg-background/40 rounded-2xl'}>*/}
+			{/*	<Card.Header>*/}
+			{/*		<Card.Title className={'text-xl font-semibold'}>*/}
+			{/*			Эпизоды*/}
+			{/*		</Card.Title>*/}
+			{/*		<Card.Description>*/}
+			{/*			Появлений: {character.episode.length}*/}
+			{/*		</Card.Description>*/}
+			{/*	</Card.Header>*/}
+			{/*	<Card.Content>*/}
+			{/*		<div className={'flex flex-wrap gap-2'}>*/}
+			{/*			{character.episode.map((url) => (*/}
+			{/*				<Chip key={url} variant={'secondary'} size={'sm'}>*/}
+			{/*					Эпизод {episodeNumber(url)}*/}
+			{/*				</Chip>*/}
+			{/*			))}*/}
+			{/*		</div>*/}
+			{/*	</Card.Content>*/}
+			{/*</Card>*/}
+
+			<Suspense fallback={<EpisodeListSkeleton/>}>
+				<CharacterEpisodes episodesIds={episodesIds}/>
+			</Suspense>
 		</div>
 	);
 };

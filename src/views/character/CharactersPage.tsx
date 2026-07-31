@@ -8,7 +8,6 @@ import {useRouter, useSearchParams} from "next/navigation";
 import {ErrorState, PaginationControlled} from "@/shared/ui";
 import {usePageParam, useQueryParams} from "@/shared/lib"
 import {ApiError} from "@/shared/api";
-import {CharactersFilter} from "@/features/characters";
 import {EmptyState} from "@/shared/ui";
 
 
